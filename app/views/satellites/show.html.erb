@@ -1,0 +1,43 @@
+<html>
+  <head>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+  function initialize() {
+    var latlng = new google.maps.LatLng(0,0);
+    var myOptions = {
+      zoom: 1,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+var flightPlanCoordinates = [
+ <%=@geo_coordinates.map do |c|
+    "new google.maps.LatLng(#{c.lat}, #{c.lon})"
+   end.join(",") %>
+
+  ];
+  var flightPath = new google.maps.Polyline({
+    path: flightPlanCoordinates,
+    strokeColor: "#FF0000",
+    strokeOpacity: 1.0,
+    strokeWeight: 2
+  });
+
+  flightPath.setMap(map);
+  }
+
+</script>
+  </head>
+  <body onload="initialize()">
+    <table>
+      <% @geo_coordinates.each do |c| %>
+        <tr>
+	  <td><%=c.lat %></td>
+	  <td><%=c.lon %></td>
+	  <td><%=c.alt %></td>
+	</tr>
+      <% end %>
+    </table>
+<div id="map_canvas" style="width:480px; height:480px"></div>
+  </body>
+</html>
