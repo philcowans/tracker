@@ -1,5 +1,5 @@
 <html>
-  <head>
+<head>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
   function initialize() {
@@ -11,7 +11,7 @@
     };
     var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 var flightPlanCoordinates = [
- <%=@geo_coordinates.map do |c|
+ <%=@passes.map do |c|
     "new google.maps.LatLng(#{c.lat}, #{c.lon})"
    end.join(",") %>
 
@@ -24,31 +24,10 @@ var flightPlanCoordinates = [
   });
 
   flightPath.setMap(map);
-
-
-var canvas = document.getElementById('position');  
-var ctx = canvas.getContext('2d'); 
-ctx.beginPath();
-ctx.arc(240,240,200,0,Math.PI*2,true);
- ctx.stroke();
-  }
-
+}
 </script>
-  </head>
-  <body onload="initialize()">
-    <table>
-      <% @geo_coordinates.each_with_index do |c,i| %>
-        <tr>
-	  <td><%=c.lat %></td>
-	  <td><%=c.lon %></td>
-	  <td><%=c.alt %></td>
-	  <td><%=@topo_coordinates[i].az %></td>
-	  <td><%=@topo_coordinates[i].el %></td>
-	  <td><%=@topo_coordinates[i].range %></td>
-	</tr>
-      <% end %>
-    </table>
+<body onload="initialize()">
 <div id="map_canvas" style="width:480px; height:480px"></div>
-<canvas id="position" width="480" height="480"></canvas>
-  </body>
+
+</body>
 </html>

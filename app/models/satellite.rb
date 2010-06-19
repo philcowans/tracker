@@ -14,6 +14,16 @@ class Satellite
     GeoCoordinate.new(orbit.get_position(offset_from_epoch(timestamp)).to_geo)
   end
 
+  def topo_coordinates(site, timestamp)
+    TopoCoordinate.new(site.get_look_angle(orbit.get_position(offset_from_epoch(timestamp))))
+  end
+
+  def visible(timestamp)
+    eci = orbit.get_position(offset_from_epoch(timestamp))
+    puts eci.x
+    (eci.x < 0) and (eci.y**2.0 + eci.z**2.0 > 6378.1**2)
+  end
+
   private
 
   def orbit
