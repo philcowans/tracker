@@ -5,6 +5,8 @@ class TimestampRef
     case namespace(value)
     when "now"
       @timestamp = Time.now
+    when "iso"
+      @timestamp = Time.parse(timestamp_value(value))
     end
   end
 
