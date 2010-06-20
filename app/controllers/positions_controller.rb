@@ -33,7 +33,7 @@ class PositionsController < ApplicationController
       format.kml do
         
         linestring = geo_coordinates.map do |c|
-          "#{c.lat},#{c.lon},#{c.alt}"
+          "#{c.lat},#{c.lon},#{c.alt * 1000}"
         end.join("\n")
         
         xml = Builder::XmlMarkup.new(:indent => 2)
@@ -65,7 +65,7 @@ class PositionsController < ApplicationController
     	        xml.LookAt {
                 xml.longitude(geo_coordinates[0].lon)
                 xml.latitude(geo_coordinates[0].lat)
-                xml.altitude(geo_coordinates[0].alt)
+                xml.altitude(geo_coordinates[0].alt * 1000)
                 xml.range(100000)
                 xml.heading(0)
               }
@@ -76,12 +76,12 @@ class PositionsController < ApplicationController
                 xml.LookAt {
                   xml.longitude(geo_coordinates[0].lon)
                   xml.latitude(geo_coordinates[0].lat)
-                  xml.altitude(geo_coordinates[0].alt)
+                  xml.altitude(geo_coordinates[0].alt * 1000)
                   xml.range(100000)
                   xml.heading(0)
                 }
                 xml.styleUrl("#highlight")
-                xml.Point { xml.coordinates("#{geo_coordinates[0].lon},#{geo_coordinates[0].lat},#{geo_coordinates[0].alt}") }
+                xml.Point { xml.coordinates("#{geo_coordinates[0].lon},#{geo_coordinates[0].lat},#{geo_coordinates[0].alt * 1000}") }
                 xml.extrude(1)
               end
               
@@ -173,7 +173,7 @@ class PositionsController < ApplicationController
     	        xml.LookAt {
                 xml.longitude(geo_coordinates.lon)
                 xml.latitude(geo_coordinates.lat)
-                xml.altitude(geo_coordinates.alt)
+                xml.altitude(geo_coordinates.alt * 1000)
                 xml.range(100000)
                 xml.heading(0)
               }
@@ -184,12 +184,12 @@ class PositionsController < ApplicationController
                 xml.LookAt {
                   xml.longitude(geo_coordinates.lon)
                   xml.latitude(geo_coordinates.lat)
-                  xml.altitude(geo_coordinates.alt)
+                  xml.altitude(geo_coordinates.alt * 1000)
                   xml.range(100000)
                   xml.heading(0)
                 }
                 xml.styleUrl("#highlight")
-                xml.Point { xml.coordinates("#{geo_coordinates.lon},#{geo_coordinates.lat},#{geo_coordinates.alt}") }
+                xml.Point { xml.coordinates("#{geo_coordinates.lon},#{geo_coordinates.lat},#{geo_coordinates.alt * 1000}") }
                 xml.extrude(1)
               end
             }
