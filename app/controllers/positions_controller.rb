@@ -6,6 +6,7 @@ class PositionsController < ApplicationController
     geo_coordinates = satellite.geo_coordinates(timestamp_ref.timestamp)
 
     respond_to do |format|
+      
       format.json do
         render :json => {
           :position => {
@@ -30,8 +31,8 @@ class PositionsController < ApplicationController
       end
       
       format.kml do
-        xml = Builder::XmlMarkup.new
         
+        xml = Builder::XmlMarkup.new
         xml.kml( "xmlns" => "http://earth.google.com/kml/2.1", "hint" => "target=sky") do
           xml.Document {
             xml.name("Satellite Tracker")
@@ -68,7 +69,7 @@ class PositionsController < ApplicationController
                 xml.LookAt {
                   xml.longitude(geo_coordinates.lon)
                   xml.latitude(geo_coordinates.lat)
-                  xml.altitude((geo_coordinates.alt)
+                  xml.altitude(geo_coordinates.alt)
                   xml.range(100000)
                   xml.heading(0)
                 }
