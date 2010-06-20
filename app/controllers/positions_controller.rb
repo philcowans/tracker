@@ -66,13 +66,13 @@ class PositionsController < ApplicationController
       format.kml do
         
         xml = Builder::XmlMarkup.new(:indent => 2)
-        output = xml.kml( "xmlns" => "http://earth.google.com/kml/2.1", "hint" => "target=sky") do
+        output = xml.kml( "xmlns" => "http://earth.google.com/kml/2.1") do
           xml.Document {
             xml.name("Satellite Tracker")
             xml.description("Updated position of satellite with a given ID")
             xml.Style( "id" => "highlight" ) {
               xml.IconStyle {
-                xml.Icon { xml.href("") }
+                xml.Icon { xml.href("http://www.randomorbit.net/images/Satellite-icon.png") }
               }
               xml.BalloonStyle {
                 xml.bgcolor('7fffffff')
