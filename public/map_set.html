@@ -17,26 +17,15 @@
 
         var satelliteId = document.location.toString().split("#")[1];
 
-        $.getJSON("http://randomorbit.net/satellites/" + satelliteId + "/positions.json?interval=1&length=60", function(data) {
-          trackCoordinates = data.positions.map(function(i) {
-            return new google.maps.LatLng(i.latitude, i.longitude)
+        $.getJSON("http://randomorbit.net/sets/" + satelliteId + "/lists/now.json?callback=?", function(data) {
+          data.positions.map(function(i) {
+            var marker = new google.maps.Marker({
+              position: new google.maps.LatLng(i.latitude, i.longitude),
+              map: map,
+              icon: "images/Satellite-icon.png",
+              title: i.satellite
+            });
           });
-
-   
-          var satellitePath = new google.maps.Polyline({
-            path: trackCoordinates,
-            strokeColor: "#FF0000",
-            strokeOpacity: 1.0,
-            strokeWeight: 2
-          });
-
-          var positionMarker = new google.maps.Marker({
-            position: trackCoordinates[0],
-            map: map,
-            icon: "images/Satellite-icon.png"
-          });
-
-          satellitePath.setMap(map);
         });
       }
 

@@ -1,6 +1,6 @@
 class PositionsController < ApplicationController
   def index
-    satellite = Satellite.new(params[:satellite_id].to_i)
+    satellite = Satellite.new(:id => params[:satellite_id].to_i)
 
     base_time = Time.now
     interval = params[:interval].to_i
@@ -112,7 +112,7 @@ class PositionsController < ApplicationController
   end
 
   def show
-    satellite = Satellite.new(params[:satellite_id].to_i)
+    satellite = Satellite.new(:id => params[:satellite_id].to_i)
     timestamp_ref = TimestampRef.new(params[:id])
 
     geo_coordinates = satellite.geo_coordinates(timestamp_ref.timestamp)

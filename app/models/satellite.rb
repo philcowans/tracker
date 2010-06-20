@@ -3,9 +3,12 @@ require "/home/ubuntu/SxP4r/sxp4r"
 class Satellite
   attr_accessor :name
 
-  def initialize(id)
-    @id = id
-    lines = TleSet.new.lookup_source(@id)
+  def initialize(params)
+    if params[:id]
+      lines = TleSet.new.lookup_source(params[:id])
+    else
+      lines = params[:lines]
+    end
     @tle = SxP4r::TLE.new(lines[0], lines[1], lines[2])
     @name = lines[0].strip
   end
