@@ -127,7 +127,7 @@ img {
 	width: 68px;
 	text-align: center;
 /*	padding-top: 19px;*/
-	bottom: 120px;
+	bottom: 115px;
 	left: 890px;
 }
 
@@ -135,6 +135,15 @@ img {
 	float: left;
 	width: 400px;
 	padding: 10px 0px 0px 32px;
+}
+
+#addresses a {
+	color: #fff;
+}
+
+#addresses a:hover {
+	color: #fff;
+	text-decoration: underline;
 }
 
 .blue {
