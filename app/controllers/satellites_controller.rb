@@ -1,6 +1,6 @@
 class SatellitesController < ApplicationController
   def show
-    satellite = Satellite.new(params[:id].to_i)
+    satellite = Satellite.new(:id => params[:id].to_i)
     site = SxP4r::Site.new(56.0, 0.0, 0.0)
 
     @geo_coordinates = []

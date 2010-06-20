@@ -1,6 +1,6 @@
 class PassesController < ApplicationController
   def index
-    satellite = Satellite.new(params[:id].to_i)
+    satellite = Satellite.new(:id => params[:id].to_i)
     site = SxP4r::Site.new(params[:lat].to_f, params[:lon].to_f, params[:alt].to_f)
 
     @passes = []

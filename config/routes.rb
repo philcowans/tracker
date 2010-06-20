@@ -3,5 +3,8 @@ ActionController::Routing::Routes.draw do |map|
     satellites.resources :positions
     satellites.resources :passes
   end
+  map.resources :sets do |sets|
+    sets.resources :lists
+  end
   map.root :controller => 'home', :action => 'index'
 end
