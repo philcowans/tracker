@@ -65,8 +65,8 @@ class PositionsController < ApplicationController
       
       format.kml do
         
-        xml = Builder::XmlMarkup.new
-        xml.kml( "xmlns" => "http://earth.google.com/kml/2.1", "hint" => "target=sky") do
+        xml = Builder::XmlMarkup.new(:indent => 2)
+        output = xml.kml( "xmlns" => "http://earth.google.com/kml/2.1", "hint" => "target=sky") do
           xml.Document {
             xml.name("Satellite Tracker")
             xml.description("Updated position of satellite with a given ID")
@@ -97,7 +97,7 @@ class PositionsController < ApplicationController
               }
 
         	    xml.Placemark do
-                xml.name(p.id)
+                xml.name(satellite.name)
                 xml.visibility(0)
                 xml.LookAt {
                   xml.longitude(geo_coordinates.lon)
@@ -112,7 +112,7 @@ class PositionsController < ApplicationController
             }
           }
           end
-      render :xml => xml
+      render :xml => output
       end
       
     end

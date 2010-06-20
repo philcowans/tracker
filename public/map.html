@@ -16,7 +16,7 @@
 
         var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
-        $.getJSON("http://randomorbit.net/satellites/20580/positions.json?interval=1&length=60", function(data) {
+        $.getJSON("http://randomorbit.net/satellites/25544/positions.json?interval=1&length=60", function(data) {
          mydata = data;
           trackCoordinates = data.positions.map(function(i) {
             return new google.maps.LatLng(i.latitude, i.longitude)
