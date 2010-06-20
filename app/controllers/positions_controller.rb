@@ -29,6 +29,85 @@ class PositionsController < ApplicationController
           render :json => json_response
         end
       end
+      
+      format.kml do
+        
+        linestring = geo_coordinates.map do |c|
+          "#{geo_coordinates.lat},#{geo_coordinates.lon},#{geo_coordinates.alt}"
+        end.join("\n")
+        
+        xml = Builder::XmlMarkup.new(:indent => 2)
+        output = xml.kml( "xmlns" => "http://earth.google.com/kml/2.1") do
+          xml.Document {
+            xml.name("Satellite Tracker")
+            xml.description("Updated position of satellite with a given ID")
+            xml.Style( "id" => "highlight" ) {
+              xml.IconStyle {
+                xml.scale(1.5)  
+                xml.Icon {
+                  xml.href("http://www.randomorbit.net/images/Satellite-icon.png")
+                }
+              }
+              xml.BalloonStyle {
+                xml.bgcolor('7fffffff')
+                xml.text{
+                  xml.cdata!("Tracking $[name]<br/>Current altitude is #{geo_coordinates.alt} km.")
+                }
+              }
+            }
+           xml.Folder {
+    	        xml.name(satellite.name)
+    	        xml.Snippet("Tracking $[name] in orbit.")
+    	        xml.visibility(1)
+    	        xml.styleUrl("#highlight")
+    	        xml.open(0)
+    	        xml.description { xml.cdata!("Tracking $[name] in orbit.") }
+    	        xml.LookAt {
+                xml.longitude(geo_coordinates[0].lon)
+                xml.latitude(geo_coordinates[0].lat)
+                xml.altitude(geo_coordinates[0].alt)
+                xml.range(100000)
+                xml.heading(0)
+              }
+
+        	    xml.Placemark do
+                xml.name(satellite.name)
+                xml.visibility(1)
+                xml.LookAt {
+                  xml.longitude(geo_coordinates[0].lon)
+                  xml.latitude(geo_coordinates[0].lat)
+                  xml.altitude(geo_coordinates[0].alt)
+                  xml.range(100000)
+                  xml.heading(0)
+                }
+                xml.styleUrl("#highlight")
+                xml.Point { xml.coordinates("#{geo_coordinates.lon},#{geo_coordinates.lat},#{geo_coordinates.alt}") }
+                xml.extrude(1)
+              end
+              
+              xml.Placemark do
+                xml.Style( "id" => "LineStyle" ) {
+                  xml.LineStyle {  
+                    xml.color('88BBFFBB')
+                    xml.width(2)
+                  }
+                }
+                xml.name('Projected Orbit')
+                xml.styleUrl('#LineStyle')
+                xml.Polygon {
+                  xml.LineString {
+                    xml.tessellate(1)
+                    xml.altitudeMode('relativeToGround')
+                    xml.coordinates(linestring)
+                  }
+                }
+              end
+            }
+          }
+          end
+      render :xml => output
+      end
+      
     end
   end
 
@@ -72,22 +151,25 @@ class PositionsController < ApplicationController
             xml.description("Updated position of satellite with a given ID")
             xml.Style( "id" => "highlight" ) {
               xml.IconStyle {
-                xml.Icon { xml.href("http://www.randomorbit.net/images/Satellite-icon.png") }
+                xml.scale(1.5)  
+                xml.Icon {
+                  xml.href("http://www.randomorbit.net/images/Satellite-icon.png")
+                }
               }
               xml.BalloonStyle {
                 xml.bgcolor('7fffffff')
                 xml.text{
-                  xml.cdata!("")
+                  xml.cdata!("Tracking $[name]<br/>Current altitude is #{geo_coordinates.alt} km.")
                 }
               }
             }
            xml.Folder {
     	        xml.name(satellite.name)
-    	        xml.Snippet("Snippet text")
+    	        xml.Snippet("Tracking $[name] in orbit.")
     	        xml.visibility(1)
     	        xml.styleUrl("#highlight")
     	        xml.open(0)
-    	        xml.description { xml.cdata!("More") }
+    	        xml.description { xml.cdata!("Tracking $[name] in orbit.") }
     	        xml.LookAt {
                 xml.longitude(geo_coordinates.lon)
                 xml.latitude(geo_coordinates.lat)
@@ -98,7 +180,7 @@ class PositionsController < ApplicationController
 
         	    xml.Placemark do
                 xml.name(satellite.name)
-                xml.visibility(0)
+                xml.visibility(1)
                 xml.LookAt {
                   xml.longitude(geo_coordinates.lon)
                   xml.latitude(geo_coordinates.lat)
@@ -108,6 +190,7 @@ class PositionsController < ApplicationController
                 }
                 xml.styleUrl("#highlight")
                 xml.Point { xml.coordinates("#{geo_coordinates.lon},#{geo_coordinates.lat},#{geo_coordinates.alt}") }
+                xml.extrude(1)
               end
             }
           }
