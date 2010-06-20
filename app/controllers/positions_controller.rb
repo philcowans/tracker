@@ -51,7 +51,7 @@ class PositionsController < ApplicationController
               xml.BalloonStyle {
                 xml.bgcolor('7fffffff')
                 xml.text{
-                  xml.cdata!("Tracking $[name]<br/>Current altitude is #{geo_coordinates.alt} km.")
+                  xml.cdata!("Tracking $[name]<br/>Current altitude is #{geo_coordinates[0].alt} km.")
                 }
               }
             }
@@ -81,7 +81,7 @@ class PositionsController < ApplicationController
                   xml.heading(0)
                 }
                 xml.styleUrl("#highlight")
-                xml.Point { xml.coordinates("#{geo_coordinates.lon},#{geo_coordinates.lat},#{geo_coordinates.alt}") }
+                xml.Point { xml.coordinates("#{geo_coordinates[0].lon},#{geo_coordinates[0].lat},#{geo_coordinates[0].alt}") }
                 xml.extrude(1)
               end
               
