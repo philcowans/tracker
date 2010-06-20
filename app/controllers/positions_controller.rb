@@ -81,8 +81,11 @@ class PositionsController < ApplicationController
                   xml.heading(0)
                 }
                 xml.styleUrl("#highlight")
-                xml.Point { xml.coordinates("#{geo_coordinates[0].lon},#{geo_coordinates[0].lat},#{geo_coordinates[0].alt * 1000}") }
-                xml.extrude(1)
+                xml.Point { 
+                  xml.coordinates("#{geo_coordinates[0].lon},#{geo_coordinates[0].lat},#{geo_coordinates[0].alt * 1000}")
+                  xml.altitudeMode('relativeToGround')
+                  extrude(1)
+                }
               end
               
               xml.Placemark do
@@ -189,7 +192,11 @@ class PositionsController < ApplicationController
                   xml.heading(0)
                 }
                 xml.styleUrl("#highlight")
-                xml.Point { xml.coordinates("#{geo_coordinates.lon},#{geo_coordinates.lat},#{geo_coordinates.alt * 1000}") }
+                xml.Point {
+                  xml.coordinates("#{geo_coordinates.lon},#{geo_coordinates.lat},#{geo_coordinates.alt * 1000}")
+                  xml.altitudeMode('relativeToGround')
+                  extrude(1)
+                }
                 xml.extrude(1)
               end
             }
