@@ -1,219 +1,216 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Random Orbit</title>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
-<link href="css/styles.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<title>RESTFUL Satellite Tracking</title>
+<%= stylesheet_link_tag "styles"  %>
+<%= javascript_include_tag "cufon-yui, font" %>
 <script type="text/javascript">
-<!--
-
-function newImage(arg) {
-	if (document.images) {
-		rslt = new Image();
-		rslt.src = arg;
-		return rslt;
-	}
-}
-
-function changeImages() {
-	if (document.images && (preloadFlag == true)) {
-		for (var i=0; i<changeImages.arguments.length; i+=2) {
-			document[changeImages.arguments[i]].src = changeImages.arguments[i+1];
-		}
-	}
-}
-
-var preloadFlag = false;
-function preloadImages() {
-	if (document.images) {
-		home_page_over = newImage("images/home-page-over.jpg");
-		about_us_over = newImage("images/about-us-over.jpg");
-		services_over = newImage("images/services-over.jpg");
-		portfolio_over = newImage("images/portfolio-over.jpg");
-		news_over = newImage("images/news-over.jpg");
-		contacts_over = newImage("images/contacts-over.jpg");
-		preloadFlag = true;
-	}
-}
-
-// -->
+			Cufon.replace('h1');
+			Cufon.replace('h2');
+			Cufon.replace('h3');
+			Cufon.replace('h4');
 </script>
 </head>
-<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="preloadImages();">
-<center>
 
-<!-- ImageReady Slices (index.psd) -->
-<table width="776" height="681" border="0" cellpadding="0" cellspacing="0" class="frame" id="Table_01">
-	<tr>
-		<td rowspan="11">
-			<img src="images/main.jpg" width="80" height="680" alt=""></td>
-		<td colspan="12">
-			<img src="images/main-03.jpg" width="617" height="114" alt=""></td>
-		<td rowspan="11">
-			<img src="images/main-04.jpg" width="78" height="680" alt=""></td>
-		<td>
-			<img src="images/spacer.gif" width="1" height="114" alt=""></td>
-	</tr>
-	<tr>
-		<td colspan="2">
-			<a href="#"
-				onmouseover="window.status='home page'; changeImages('home_page', 'images/home-page-over.jpg'); return true;"
-				onmouseout="window.status=''; changeImages('home_page', 'images/home-page.jpg'); return true;"
-				onmousedown="changeImages('home_page', 'images/home-page-over.jpg'); return true;"
-				onmouseup="changeImages('home_page', 'images/home-page-over.jpg'); return true;">
-				<img name="home_page" src="images/home-page.jpg" width="112" height="35" border="0" alt="home page"></a></td>
-		<td colspan="2">
-			<a href="#"
-				onmouseover="window.status='about us'; changeImages('about_us', 'images/about-us-over.jpg'); return true;"
-				onmouseout="window.status=''; changeImages('about_us', 'images/about-us.jpg'); return true;"
-				onmousedown="changeImages('about_us', 'images/about-us-over.jpg'); return true;"
-				onmouseup="changeImages('about_us', 'images/about-us-over.jpg'); return true;">
-				<img name="about_us" src="images/about-us.jpg" width="98" height="35" border="0" alt="about us"></a></td>
-		<td>
-			<a href="#"
-				onmouseover="window.status='services'; changeImages('services', 'images/services-over.jpg'); return true;"
-				onmouseout="window.status=''; changeImages('services', 'images/services.jpg'); return true;"
-				onmousedown="changeImages('services', 'images/services-over.jpg'); return true;"
-				onmouseup="changeImages('services', 'images/services-over.jpg'); return true;">
-				<img name="services" src="images/services.jpg" width="91" height="35" border="0" alt="services"></a></td>
-		<td colspan="3">
-			<a href="#"
-				onmouseover="window.status='portfolio'; changeImages('portfolio', 'images/portfolio-over.jpg'); return true;"
-				onmouseout="window.status=''; changeImages('portfolio', 'images/portfolio.jpg'); return true;"
-				onmousedown="changeImages('portfolio', 'images/portfolio-over.jpg'); return true;"
-				onmouseup="changeImages('portfolio', 'images/portfolio-over.jpg'); return true;">
-				<img name="portfolio" src="images/portfolio.jpg" width="106" height="35" border="0" alt="portfolio"></a></td>
-		<td colspan="2">
-			<a href="#"
-				onmouseover="window.status='news'; changeImages('news', 'images/news-over.jpg'); return true;"
-				onmouseout="window.status=''; changeImages('news', 'images/news.jpg'); return true;"
-				onmousedown="changeImages('news', 'images/news-over.jpg'); return true;"
-				onmouseup="changeImages('news', 'images/news-over.jpg'); return true;">
-				<img name="news" src="images/news.jpg" width="76" height="35" border="0" alt="news"></a></td>
-		<td colspan="2">
-			<a href="#"
-				onmouseover="window.status='contacts'; changeImages('contacts', 'images/contacts-over.jpg'); return true;"
-				onmouseout="window.status=''; changeImages('contacts', 'images/contacts.jpg'); return true;"
-				onmousedown="changeImages('contacts', 'images/contacts-over.jpg'); return true;"
-				onmouseup="changeImages('contacts', 'images/contacts-over.jpg'); return true;">
-				<img name="contacts" src="images/contacts.jpg" width="134" height="35" border="0" alt="contacts"></a></td>
-		<td>
-			<img src="images/spacer.gif" width="1" height="35" alt=""></td>
-	</tr>
-	<tr>
-		<td colspan="12">
-			<img src="images/main-17.jpg" width="617" height="99" alt=""></td>
-		<td>
-			<img src="images/spacer.gif" width="1" height="99" alt=""></td>
-	</tr>
-	<tr>
-		<td colspan="6" align="left" valign="top" bgcolor="#FFFFFF">
-			<img src="images/wel.jpg" width="365" height="63" alt=""></td>
-		<td colspan="6" align="left" valign="top" bgcolor="#FFFFFF">
-			<img src="images/news-19.jpg" width="252" height="63" alt=""></td>
-		<td>
-			<img src="images/spacer.gif" width="1" height="63" alt=""></td>
-	</tr>
-	<tr>
-		<td width="35" height="83" align="left" valign="top" bgcolor="#FFFFFF"></td>
-		<td width="330" height="83" colspan="5" align="left" valign="top" bgcolor="#FFFFFF"><span class="text1">Ea consetetur sadi lorem sed lorem ipsum dolor sed 
-          </span><br>
-      Dolores et ea consetetur sadi pscing elit consetetur pscing elitr, sed diam nonumy consetetur sadi lorem sed  et ea consetetur sadi pscing elit pscing elitr, sed diam nonumy consetetur sadi lorem sed  et ea consetetur sadi pscing elit <a href="#" class="a">| more</a></td>
-		<td colspan="3" rowspan="3" align="left" valign="top" bgcolor="#FFFFFF">
-			<img src="images/news-20.jpg" width="47" height="166" alt=""></td>
-		<td colspan="2" rowspan="3" align="left" valign="top" bgcolor="#FFFFFF" width="180" height="166" style="padding-top:3px"><p><span class="text2">20.06.2007</span> sadi pscing elit consetetur lorem ipsum sadi lorem sed  et ea sadi pscing elit <a href="#" class="a">| more</a><br>
-		  <br>
-		  <span class="text2">19.06.2007 </span>sadi pscing elit consetetur lorem ipsum sadi lorem sed  et ea sadi pscing elit <a href="#" class="a">| more</a><br>
-		  <br>
-		  <span class="text2">18.06.2007</span> sadi pscing elit consetetur lorem ipsum sadi lorem sed  et ea sadi pscing elit <a href="#" class="a">| more</a></p>
-	    </td>
-		<td width="25" height="166" rowspan="3" align="left" valign="top" bgcolor="#FFFFFF"></td>
-		<td>
-			<img src="images/spacer.gif" width="1" height="83" alt=""></td>
-	</tr>
-	<tr>
-		<td colspan="6" align="left" valign="top" bgcolor="#FFFFFF">
-			<img src="images/feat.jpg" width="365" height="38" alt=""></td>
-		<td>
-			<img src="images/spacer.gif" width="1" height="38" alt=""></td>
-	</tr>
-	<tr>
-		<td colspan="3" rowspan="3" align="left" valign="top" bgcolor="#FFFFFF">
-			<img src="images/feat-23.jpg" width="160" height="104" alt=""></td>
-		<td width="205" height="104" colspan="3" rowspan="3" align="left" valign="top" bgcolor="#FFFFFF"><span class="text1">Ea consetetur sadi lorem sed lorem ipsum dolor sed</span> <br>
-	    Dolores et ea consetetur sadi pscing elit consetetur pscing elitr, sed diam nonumy consetetur sadi lorem sed  et ea et ea consetetur sadi pscing elit <a href="#" class="a">| more</a></td>
-		<td>
-			<img src="images/spacer.gif" width="1" height="45" alt=""></td>
-	</tr>
-	<tr>
-		<td colspan="6" align="left" valign="top" bgcolor="#FFFFFF">
-			<img src="images/test.jpg" width="252" height="39" alt=""></td>
-		<td>
-			<img src="images/spacer.gif" width="1" height="39" alt=""></td>
-	</tr>
-	<tr>
-		<td width="24" height="91" rowspan="2" align="left" valign="top" bgcolor="#FFFFFF"></td>
-		<td width="203" height="91" colspan="4" rowspan="2" align="left" valign="top" bgcolor="#FFFFFF"><span class="text1">Ea consetetur sadi lorem sed 
-          </span><br>
-      Dolores et ea consetetur sadi pscing elit consetetur pscing elitr, sed diam nonumy consetetur sadi lorem sed  et ea et ea consetetur sadi pscing elit <a href="#" class="a">| more</a></td>
-		<td width="25" height="91" rowspan="2" align="left" valign="top" bgcolor="#FFFFFF"></td>
-		<td>
-			<img src="images/spacer.gif" width="1" height="20" alt=""></td>
-	</tr>
-	<tr>
-		<td align="left" valign="top" bgcolor="#FFFFFF">
-			<img src="images/feat-25.jpg" width="35" height="71" alt=""></td>
-	  <td width="330" height="71" colspan="5" align="left" valign="top" bgcolor="#FFFFFF" style="line-height:18px"><a href="#" class="b">Dolores et ea consetetur sadi pscing elit consetetur pscing elitr,</a><br> 
-        <a href="#" class="b">sed diam nonumy consetetur sadi lorem sed  et ea et ea pscing </a><br>
-        <a href="#" class="b">elitr, sed diam nonumy consetetur sadi lorem sed  et ea et ea</a></td>
-		<td>
-			<img src="images/spacer.gif" width="1" height="71" alt=""></td>
-	</tr>
-	<tr>
-		<td width="617" height="73" colspan="12" align="center" valign="middle" background="images/b_links.jpg" class="text3" ><a href="#">HOME</a> | <a href="#">ABOUT US</a> | <a href="#">SERVICES</a> | <a href="#">PORTFOLIO</a> | <a href="#">NEWS &amp; EVENTS</a> | <a href="#">SUPPORT</a> | <a href="#">CONTACTS</a><br>
-        Copyright © Your Company Name. Designed by <a href="http://www.templateyes.com" target="_blank">TemplateYes</a>.</td>
-		<td>
-			<img src="images/spacer.gif" width="1" height="73" alt=""></td>
-	</tr>
-	<tr>
-		<td>
-			<img src="images/spacer.gif" width="80" height="1" alt=""></td>
-		<td>
-			<img src="images/spacer.gif" width="35" height="1" alt=""></td>
-		<td>
-			<img src="images/spacer.gif" width="77" height="1" alt=""></td>
-		<td>
-			<img src="images/spacer.gif" width="48" height="1" alt=""></td>
-		<td>
-			<img src="images/spacer.gif" width="50" height="1" alt=""></td>
-		<td>
-			<img src="images/spacer.gif" width="91" height="1" alt=""></td>
-		<td>
-			<img src="images/spacer.gif" width="64" height="1" alt=""></td>
-		<td>
-			<img src="images/spacer.gif" width="24" height="1" alt=""></td>
-		<td>
-			<img src="images/spacer.gif" width="18" height="1" alt=""></td>
-		<td>
-			<img src="images/spacer.gif" width="5" height="1" alt=""></td>
-		<td>
-			<img src="images/spacer.gif" width="71" height="1" alt=""></td>
-		<td>
-			<img src="images/spacer.gif" width="109" height="1" alt=""></td>
-		<td>
-			<img src="images/spacer.gif" width="25" height="1" alt=""></td>
-		<td>
-			<img src="images/spacer.gif" width="78" height="1" alt=""></td>
-		<td></td>
-	</tr>
-</table>
-  <!-- End ImageReady Slices -->
-  <table width="728" border="0" cellpadding="10" cellspacing="0">
-    <tr> 
-      <td align="center"> <font color="#eeeeee">Sponsored by</font><br>
-        <a href="http://www.wix.com/free/website?utm_campaign=templateyes&experiment_id=templateyesexp" title="Free Flash Templates" target="_blank"><img src="images/banner-728x90.jpg" width="728" height="90" border="0" alt="Free Flash Templates"></a></td>
-    </tr>
-  </table>
-</center>
+<body>
+<div id="container">
+	
+	<!-- PDF download and print links -->
+	<div id="print_download_links">
+		<a href="http://sciencehackday.com/">Science Hack Day</a>|<a href="http://www.celestrak.com">Celestrak</a>|<a href="mailto:info@randomorbit.com">Contact Us</a>
+	</div>
+	<!-- End -->
+	
+	<div id="content">
+		<div id="header">
+			<div id="contacts">
+				<!-- Name -->
+				<div id="name">
+					<h1>Random <strong>Orbit</strong></h1>
+				</div>
+				<!-- End -->
+				
+				<!-- Addresses -->
+				<div id="addresses">
+					<h2><span class="blue">w:</span> www.randomorbit.net</h2>
+					<h2><span class="blue">e:</span> info@randomorbit.net</h2>
+					<h2><span class="blue">t:</span> @randomorbit</h2>
+					<h3><span class="blue">c:</span> Created at Science Hack Day, London 2010</h3>
+				</div>
+				<!-- End -->
+				
+				<!-- Social networks -->
+				<div id="socialnetworks">
+					<div>
+						<a href="http://twitter.com/random_orbit"><img src="images/twitter.png" alt="Twitter" title="Twitter" border="0"/></a>
+						<a href="#"><img src="images/facebook.png" alt="Facebook" title="Facebook" border="0"/></a>
+						<a href="http://sciencehackday.com/"><img src="images/shd2010.png" width="40" alt="Science Hack Day" title="Science Hack Day" border="0"/></a>
+					</div>
+				</div>
+				<!-- End -->
+			</div>
+			
+			<!-- Photo -->
+			<!-- <div id="photo_container">
+				<img src="images/photo.jpg" alt="Me" title="Me"/>
+			</div> -->
+			<!-- End -->
+			
+		</div>
+		
+		<div id="leftcolumn">
+			
+			<!-- Education Section -->
+			<div class="section_heading">
+				<span>ABOUT</span>
+			</div>
+			<!-- End -->
+			
+			<!-- Education Entry 1 -->
+			<div class="education_entry">
+				<div class="education_title">
+					RESTFUL Services for Satellites
+				</div>
+				<h6>Created at Science Hack Day 2010 in London</h6>
+				<div class="text_content">				
+					Donec gravida cursus libero, ac tristique erat pulvinar sed. Mauris pulvinar, leo ut faucibus sagittis, sapien enim dictum erat, in rutrum libero erat nec lacus. 
+				</div>
+			</div>
+			<!-- End -->
+			
+			<!-- Computer Skills Section -->
+			<div class="section_heading">
+				<span>HOW TO USE THIS SITE</span>
+			</div>
+			<!-- End -->
+			
+			<!-- Skill Set 1 -->
+			<div class="misc_title">
+				XML, JSON and KML
+			</div>
+			<div class="text_content">				
+				Donec gravida cursus libero, ac tristique erat pulvinar sed. Mauris pulvinar, leo ut faucibus sagittis, sapien enim dictum erat, in rutrum libero erat nec lacus. 
+			</div>
+			<br clear="all"/>
+			<!-- End -->
+			
+			<!-- Skill Set 1 -->
+			<div class="misc_title">
+				XML, JSON and KML
+			</div>
+			<div class="text_content">				
+				Donec gravida cursus libero, ac tristique erat pulvinar sed. Mauris pulvinar, leo ut faucibus sagittis, sapien enim dictum erat, in rutrum libero erat nec lacus. 
+			</div>
+			<br clear="all"/>
+			<!-- End -->
+			
+			<!-- Languages & Misc Section -->
+			<div class="section_heading">
+				<span>DEVELOPMENT TEAM</span>
+			</div>
+			<!-- End -->
+			
+			<!-- Languages -->
+			<div class="misc_title">
+				The Team Behind this Site
+			</div>
+			<div class="misc">
+				<ul>
+					<li>Phil Cowans - Rails Fiend!</li>
+					<li>Robert Simpson - Astrophysics Researcher</li>
+					<li>Santa - Present Giver</li>
+					<li>Mr. Hanky - Christmas Poo</li>
+				</ul>
+			</div>
+			<!-- End -->
+			
+		</div>
+		
+		<div id="rightcolumn">
+			
+			<!-- Work Experience Section -->
+			<div class="section_heading">
+				<span>WHAT YOU CAN DO</span>
+			</div>
+			<!-- End -->
+			
+			<!-- Work Entry 1 -->
+			<div class="work_entry">
+				<div class="work_title">
+					Orbital Tracking
+				</div>
+				<a href="#"><div class="work_date">
+					XML Example
+				</div></a>
+				<br clear="all"/>
+				<h6>Locate satellites in real time</h6>
+				<div class="text_content">				
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+			</div>
+			<!-- End -->
+			
+			<!-- Work Entry 2 -->
+			<div class="work_entry">
+				<div class="work_title">
+					Orbit Progression
+				</div>
+				<a href="#"><div class="work_date">
+					KML Example
+				</div></a>
+				<br clear="all"/>
+				<h6>Predict future locations of satellites</h6>
+				<div class="text_content">				
+					Donec gravida cursus libero, ac tristique erat pulvinar sed. Mauris pulvinar, leo ut 
+					faucibus sagittis, sapien enim dictum erat, in rutrum libero erat nec lacus. Vimus 
+					sodales felis non erat vestibulum gravida. Praesent molestie euismod eleifend. 
+					Mauris elementum, quam ac semper tincidunt, diam urna blandit arcu, eget 
+					vulputate elit libero at arcu.
+				</div>
+			</div>
+			<!-- End -->
+			
+			<!-- Work Entry 3 -->
+			<div class="work_entry">
+				<div class="work_title">
+					Satellite Spotting
+				</div>
+				<a href="#"><div class="work_date">
+					JSON Example
+				</div></a>
+				<br clear="all"/>
+				<h6>Find out when satellites will be visible</h6>
+				<div class="text_content">				
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+			</div>
+			<!-- End -->
+				
+			<!-- Awards & Achievements Section -->
+			<div class="section_heading">
+				<span>UNDER DEVELOPMENT</span>
+			</div>
+			<!-- End -->
+			
+			<!-- Awards -->
+			<div class="awards">
+				<ul>
+					<li>Iridium Flare predictions</li>
+					<li>Personal Twitter Updates</li>
+					<li>Mobile Satellite Tracking</li>
+					<li>Real-time satellite alerts</li>
+				</ul>
+			</div>
+			<!-- End -->
+
+		</div>
+		
+		<br clear="all"/>
+		
+	</div>
+	
+</div>
+<script type="text/javascript"> Cufon.now(); </script>
 </body>
-
 </html>

@@ -1,0 +1,247 @@
+/* 	CV page
+		Design by seal - http://www.byseal.com/
+		Copyright 2010 - All rights reserved.
+*/
+
+
+body {
+	background-color: #0f2042; /* Setting the background color */
+	margin: 0px;
+	padding: 0px;
+	font-family: Tahoma, Arial; /* This is the main font used in this page, you can change it to one you like better */
+	font-size: 12px;
+	lline-height: 18px;
+}
+
+#container {
+	width: 100%;
+}
+
+#content {
+	background-color: #ffffff;
+	margin: 0px auto;
+	width: 960px;
+	padding-bottom: 30px;
+	margin-bottom: 40px;
+}
+
+h1 {
+	font-size: 60px;
+	color: #ffffff;
+	font-weight: normal;
+	margin: 0px;
+	padding: 35px 0px 0px 32px;
+	height: 80px;
+}
+
+h2, h3 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #ffffff;
+	border-top: 1px solid #388ac9;
+	padding: 8px 0px;
+	margin: 0px;
+	height: 16px;
+}
+
+h3 {
+	border-bottom: 1px solid #388ac9;
+}
+
+h4 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #ffffff;
+	margin: 0px;
+	height: 16px;
+}
+
+h6 {
+	margin: 0px;
+	font-size: 16px;
+	color: #0f2042;
+	padding: 6px 0px 12px 0px;
+}
+
+img { 
+	behavior: url(iepngfix/iepngfix.htc);
+}
+
+
+
+
+/***********************/
+/***** Print Links *****/
+/***********************/
+
+#print_download_links {
+	text-align: right;
+	padding: 50px 0px 5px 0px;
+	color: #c1dbf0;
+	margin: 0px auto;
+	width: 960px;
+	font-size: 11px;
+}
+
+#print_download_links a {
+	color: #c1dbf0;
+	text-decoration: none;
+	padding: 10px;
+}
+
+#print_download_links a:hover {
+	text-decoration: underline;
+}
+
+
+
+
+/******************/
+/***** Header *****/
+/******************/
+
+#header {
+	background: url('../images/header_bkg.jpg') no-repeat;
+	width: 960px;
+	height: 300px;
+}
+
+#contacts {
+	width: 700px;
+	height: 0px;
+	float: left;
+}
+
+#photo_container {
+	width: 240px;
+	float: right;
+}
+
+#photo_container img {
+	border: 12px solid #ffffff;
+	margin-top: 30px;
+}
+
+#socialnetworks {
+	position: relative;
+	width: 68px;
+	text-align: center;
+/*	padding-top: 19px;*/
+	bottom: 120px;
+	left: 890px;
+}
+
+#addresses {
+	float: left;
+	width: 400px;
+	padding: 10px 0px 0px 32px;
+}
+
+.blue {
+	color: #9acdf0;
+}
+
+
+
+
+/*******************/
+/***** Content *****/
+/*******************/
+
+
+#leftcolumn {
+	float: left;
+	width: 435px;
+	padding-left: 32px;
+}
+
+#rightcolumn {
+	float: left;
+	width: 435px;
+	padding-left: 26px;
+	padding-right: 30px;
+}
+
+.section_heading {
+	margin: 36px 0px 0px 0px;
+	font-family: lucida sans, arial;
+	line-height: 40px;
+}
+
+.section_heading span {
+	background: #0f2042; 
+	padding: 4px 9px; 
+	font-size: 26px; 
+	color: #ffffff;
+}
+
+.work_title,
+.education_title {
+	font-size: 20px;
+	font-family: lucida sans, arial;
+	color: #066dbb;
+	padding-top: 5px;
+}
+
+.work_title {
+	float: left;
+}
+
+.misc_title {
+	font-size: 20px;
+	font-family: lucida sans, arial;
+	color: #066dbb;
+	padding: 30px 0px 10px 0px;
+}
+
+.work_date {
+	float: right;
+	width: 122px;
+	height: 30px;
+	line-height: 28px;
+	text-align: center;
+	ppadding-top: 8px;
+	background: url('../images/date_bkg.jpg') no-repeat;
+	color: #ffffff;
+	font-size: 11px;
+	text-decoration: none;
+}
+
+body a {
+	text-decoration: none;
+}
+
+.work_entry,
+.education_entry {
+	padding-top: 30px;
+}
+
+.text_content {
+	line-height: 20px;
+}
+
+.misc_left {
+	float: left;
+	width: 50%;
+	line-height: 20px;
+}
+
+.misc_right {
+	float: right;
+	width: 50%;
+	line-height: 20px;
+}
+
+.misc {
+	line-height: 20px;
+}
+
+.awards {
+	line-height: 20px;
+	padding-top: 30px;
+}
+
+ul {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
