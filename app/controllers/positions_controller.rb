@@ -33,7 +33,7 @@ class PositionsController < ApplicationController
       format.kml do
         
         linestring = geo_coordinates.map do |c|
-          "#{geo_coordinates.lat},#{geo_coordinates.lon},#{geo_coordinates.alt}"
+          "#{c.lat},#{c.lon},#{c.alt}"
         end.join("\n")
         
         xml = Builder::XmlMarkup.new(:indent => 2)
