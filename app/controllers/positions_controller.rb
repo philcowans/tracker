@@ -72,22 +72,24 @@ class PositionsController < ApplicationController
             xml.description("Updated position of satellite with a given ID")
             xml.Style( "id" => "highlight" ) {
               xml.IconStyle {
-                xml.Icon { xml.href("http://www.randomorbit.net/images/Satellite-icon.png") }
+                xml.Icon {
+                  xml.href("http://www.randomorbit.net/images/Satellite-icon.png")
+                }
               }
               xml.BalloonStyle {
                 xml.bgcolor('7fffffff')
                 xml.text{
-                  xml.cdata!("")
+                  xml.cdata!("Tracking $[name]<br/>")
                 }
               }
             }
            xml.Folder {
     	        xml.name(satellite.name)
-    	        xml.Snippet("Snippet text")
+    	        xml.Snippet("Tracking $[name] in orbit.")
     	        xml.visibility(1)
     	        xml.styleUrl("#highlight")
     	        xml.open(0)
-    	        xml.description { xml.cdata!("More") }
+    	        xml.description { xml.cdata!("Tracking $[name] in orbit.") }
     	        xml.LookAt {
                 xml.longitude(geo_coordinates.lon)
                 xml.latitude(geo_coordinates.lat)
@@ -98,7 +100,7 @@ class PositionsController < ApplicationController
 
         	    xml.Placemark do
                 xml.name(satellite.name)
-                xml.visibility(0)
+                xml.visibility(1)
                 xml.LookAt {
                   xml.longitude(geo_coordinates.lon)
                   xml.latitude(geo_coordinates.lat)
@@ -108,6 +110,7 @@ class PositionsController < ApplicationController
                 }
                 xml.styleUrl("#highlight")
                 xml.Point { xml.coordinates("#{geo_coordinates.lon},#{geo_coordinates.lat},#{geo_coordinates.alt}") }
+                xml.extrude(1)
               end
             }
           }
