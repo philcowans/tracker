@@ -49,21 +49,14 @@
 					</div>
 				</div>
 				<!-- End -->
-			</div>
-			
-			<!-- Photo -->
-			<!-- <div id="photo_container">
-				<img src="images/photo.jpg" alt="Me" title="Me"/>
-			</div> -->
-			<!-- End -->
-			
+			</div>	
 		</div>
 		
 		<div id="leftcolumn">
 			
 			<!-- Education Section -->
 			<div class="section_heading">
-				<span>ABOUT</span>
+				<span>ABOUT RANDOM ORBIT</span>
 			</div>
 			<!-- End -->
 			
@@ -72,73 +65,54 @@
 				<div class="education_title">
 					RESTFUL Services for Satellites
 				</div>
-				<h6>Created at Science Hack Day 2010 in London</h6>
 				<div class="text_content">				
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					<p>Using this site you can access satellite position information on almost any tracked satellite that is in orbit around the Earth. This is done by making requests to specific URLs (see examples on the right) and parsing the response. We also have a handy map interface so you can track satellites on the site.</p>
+					<p>This site was created during <%= link_to("Science Hack Day","http://sciencehackday.com/") %>, an event held in June 2010 at the Guardian offices in London. It is still very much under development but we thought we'd put it out for use anyway, in the spirit of hack day projects.</p>
+					<p>This site uses <%= link_to("TLE tracking data", "http://www.celestrak.com/NORAD/documentation/tle-fmt.asp")%>, from the wonderful <%= link_to("Celestrak","http://www.celestrak.com/") %> site. We use these data, and the <%= link_to("SGP4 algorithm","http://en.wikipedia.org/wiki/Simplified_Perturbations_models") %>, to calculate the location of given satellites at specified times. We are currently working on predicting human-eye visible passes at given points on the Earth.</p>
 				</div>
 			</div>
 			<!-- End -->
 			
-			<!-- Computer Skills Section -->
 			<div class="section_heading">
-				<span>HOW TO USE THIS SITE</span>
+				<span>UNDER DEVELOPMENT</span>
 			</div>
-			<!-- End -->
 			
-			<!-- Skill Set 1 -->
-			<div class="misc_title">
-				XML, JSON and KML
+			<div class="awards">
+				<ul>
+					<li><%= link_to("Ben Smith", "http://twitter.com/thesmith") %> is working on a way for you to chat to satellites via a Jabber client. This was a part of the original Science Hack Project. More info and links soon.<li>
+					<li>Iridium Flare predictions</li>
+					<li>Personal Twitter Updates</li>
+					<li>Mobile Satellite Tracking</li>
+					<li>Real-time satellite alerts</li>
+				</ul>
 			</div>
-			<div class="text_content">				
-				Donec gravida cursus libero, ac tristique erat pulvinar sed. Mauris pulvinar, leo ut faucibus sagittis, sapien enim dictum erat, in rutrum libero erat nec lacus. 
-			</div>
-			<br clear="all"/>
-			<!-- End -->
 			
-			<!-- Skill Set 1 -->
-			<div class="misc_title">
-				XML, JSON and KML
-			</div>
-			<div class="text_content">				
-				Donec gravida cursus libero, ac tristique erat pulvinar sed. Mauris pulvinar, leo ut faucibus sagittis, sapien enim dictum erat, in rutrum libero erat nec lacus. 
-			</div>
-			<br clear="all"/>
-			<!-- End -->
-			
-			<!-- Languages & Misc Section -->
 			<div class="section_heading">
 				<span>DEVELOPMENT TEAM</span>
 			</div>
-			<!-- End -->
 			
-			<!-- Languages -->
 			<div class="misc_title">
 				The Team Behind this Site
 			</div>
 			<div class="misc">
 				<ul>
-					<li>Phil Cowans - Rails Fiend!</li>
-					<li>Robert Simpson - Astrophysics Researcher</li>
-					<li>Santa - Present Giver</li>
-					<li>Mr. Hanky - Christmas Poo</li>
+					<li><%= link_to("Phil Cowans", "http://twitter.com/philcowans") %> - Rails Fiend workin</li>
+					<li><%= link_to("Robert Simpson", "http://twitter.com/orbitingfrog") %> - Astrophysicist working at Oxford University.</li>
 				</ul>
 			</div>
-			<!-- End -->
 			
 		</div>
 		
 		<div id="rightcolumn">
 			
-			<!-- Work Experience Section -->
 			<div class="section_heading">
-				<span>WHAT YOU CAN DO</span>
+				<span>EXAMPLES</span>
 			</div>
-			<!-- End -->
 			
-			<!-- Work Entry 1 -->
+			<!-- Entry 1 -->
 			<div class="work_entry">
 				<div class="work_title">
-					Orbital Tracking
+					Live Orbital Tracking
 				</div>
 				<a href="http://randomorbit.net/satellites/25544/positions/now.xml"><div class="work_date">
 					XML Example
@@ -146,61 +120,40 @@
 				<br clear="all"/>
 				<h6>Locate satellites in real time</h6>
 				<div class="text_content">				
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					In this example, we get an XML file telling us the current location of the International Space Station (NORAD ID: 25544). This data can also be retrieved as a JSON or KML file by simply changing the '.xml' in the URL to the require file type. The ISS orbits the Earth roughly every hour and a half. The coordinates given are the latitude and longitude, in decimal degrees, and the altitude in kilometres.
 				</div>
 			</div>
 			<!-- End -->
 			
-			<!-- Work Entry 2 -->
+			<!-- Entry 2 -->
 			<div class="work_entry">
 				<div class="work_title">
-					Orbit Progression
+					Google Earth
 				</div>
 				<a href="/envisatracker.kmz"><div class="work_date">
-					KML Example
+					KMZ Example
 				</div></a>
 				<br clear="all"/>
-				<h6>Predict future locations of satellites</h6>
+				<h6>Data can be easily used in Google Earth</h6>
 				<div class="text_content">				
-					Donec gravida cursus libero, ac tristique erat pulvinar sed. Mauris pulvinar, leo ut 
-					faucibus sagittis, sapien enim dictum erat, in rutrum libero erat nec lacus. Vimus 
-					sodales felis non erat vestibulum gravida. Praesent molestie euismod eleifend. 
-					Mauris elementum, quam ac semper tincidunt, diam urna blandit arcu, eget 
-					vulputate elit libero at arcu.
+					The example file is a KMZ download that can be opened in Google Earth. This file uses the KML response from <%= link_to("this link", "http://randomorbit.net/satellites/27386/positions/now.kml") %> to track the Envisat satellite (NORAD ID: 27386). Google Earth allows you to create 'Network Overlays' that regularly check for updated information from a URL, or file on the web. This can bundled into a KMZ file and shared.
 				</div>
 			</div>
 			<!-- End -->
 			
-			<!-- Work Entry 3 -->
+			<!-- Entry 3 -->
 			<div class="work_entry">
 				<div class="work_title">
 					Live Maps
 				</div>
-				<a href="http://randomorbit.net/map#20580"><div class="work_date">
+				<a href="http://randomorbit.net/map_set#iridium"><div class="work_date">
 					Map Example
 				</div></a>
 				<br clear="all"/>
 				<h6>See satellites live on a map.</h6>
 				<div class="text_content">				
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Here you can see that satellites can be tracked not only individually but also in groups. Celestrak categorises the TLE files it produces into logical sets. This example shows the complete set of Iridium satellites. These are a large network of commercial satellites that support Iridium satellite phones. The complete list of sets is available on the <%= link_to("Celestrak website", "http://celestrak.com/NORAD/elements/") %>.
 				</div>
-			</div>
-			<!-- End -->
-				
-			<!-- Awards & Achievements Section -->
-			<div class="section_heading">
-				<span>UNDER DEVELOPMENT</span>
-			</div>
-			<!-- End -->
-			
-			<!-- Awards -->
-			<div class="awards">
-				<ul>
-					<li>Iridium Flare predictions</li>
-					<li>Personal Twitter Updates</li>
-					<li>Mobile Satellite Tracking</li>
-					<li>Real-time satellite alerts</li>
-				</ul>
 			</div>
 			<!-- End -->
 
