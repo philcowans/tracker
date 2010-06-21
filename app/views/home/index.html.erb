@@ -67,7 +67,7 @@
 				</div>
 				<div class="text_content">				
 					<p>Using this site you can access satellite position information on almost any tracked satellite that is in orbit around the Earth. This is done by making requests to specific URLs (see examples on the right) and parsing the response. We also have a handy map interface so you can track satellites on the site.</p>
-					<p>This site was created during <%= link_to("Science Hack Day","http://sciencehackday.com/") %>, an event held in June 2010 at the Guardian offices in London. It is still very much under development but we thought we'd put it out for use anyway, in the spirit of hack day projects.</p>
+					<p>This site was created during <%= link_to("Science Hack Day","http://sciencehackday.com/") %>, an event held in June 2010 at the Guardian offices in London. It is still very much under development but we thought we'd put it out for use anyway, in the spirit of hack day projects. It began as a small project on the <%= link_to("Orbiting Frog","http://orbitingfrog.com/blog/satellite-kml/") %> blog, and was created in a hacky combo of Perl and PHP. Now it is growing into a full REST service as a Ruby on Rails application.</p>
 					<p>This site uses <%= link_to("TLE tracking data", "http://www.celestrak.com/NORAD/documentation/tle-fmt.asp")%>, from the wonderful <%= link_to("Celestrak","http://www.celestrak.com/") %> site. We use these data, and the <%= link_to("SGP4 algorithm","http://en.wikipedia.org/wiki/Simplified_Perturbations_models") %>, to calculate the location of given satellites at specified times. We are currently working on predicting human-eye visible passes at given points on the Earth.</p>
 				</div>
 			</div>
